@@ -486,11 +486,11 @@ if next_date is not None:
 
     # Prediction with uncertainty window
     col_a, col_b = st.columns(2)
-    col_a.metric("Estimated Next Start", next_date.strftime("%Y-%m-%d"))
+    col_a.metric("Estimated Next Start", next_date.strftime("%d/%m/%Y"))
     col_b.metric("Avg Cycle Length (last 6)", f"{avg_len:.1f} days")
 
     st.info(
-        f"Uncertainty window: **{lower_bound.strftime('%Y-%m-%d')}** to **{upper_bound.strftime('%Y-%m-%d')}** "
+        f"Uncertainty window: **{lower_bound.strftime('%d/%m/%Y')}** to **{upper_bound.strftime('%d/%m/%Y')}** "
         f"(±{std_len:.1f} days based on std dev of last 6 cycles)"
     )
     st.caption(
